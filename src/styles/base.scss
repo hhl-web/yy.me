@@ -1,0 +1,20 @@
+@import './var.scss';
+@import './theme.scss';
+
+body {
+    height: 100%;
+    width: 100%;
+    background-color: var(--body-bg);
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
+        Microsoft YaHei, Arial, sans-serif;
+    overflow: hidden;
+    padding: 0;
+    margin:  0;
+
+}
+
+html {
+    height: 100%;
+}

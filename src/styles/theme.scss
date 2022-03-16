@@ -1,0 +1,14 @@
+@mixin theme-var( $theme-text,$theme-body-bg) {
+    #{--body-bg}: $theme-body-bg;
+}
+
+@mixin  defaultTheme(){
+    @include theme-var(
+        $theme-text:rgba(#000, 0.68),
+        $theme-body-bg: #000
+    )
+}
+
+@mixin  darkTheme(){
+    @include theme-var()
+}
