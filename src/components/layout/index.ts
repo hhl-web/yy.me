@@ -1,8 +1,12 @@
 import Setting from './components/setting/index.vue';
 import NavBar from './components/navbar/index.vue';
 import Footer from './components/footer/index.vue';
+import Empty from './empty.vue';
+import Welcome from './welcome.vue'
 export {
     Setting,
     NavBar,
-    Footer
+    Footer,
+    Empty,
+    Welcome
 }

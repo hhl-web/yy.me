@@ -1,35 +1,28 @@
 <template>
   <div class="app default">
-     <NavBar/>
-        <div class="app-main">
-            <router-view></router-view>
-        </div>
-        <Footer/>
+    <Background/>
+    <PCApp/>
   </div>
 </template>
 
 <script lang="ts">
 import {defineComponent} from 'vue';
-import {NavBar,Footer} from './components/layout';
+import {PCApp} from '../components/equipment';
+import {Background} from '../components/widget'
 export default defineComponent({
   name: 'App',
-  components:{NavBar,Footer},
+  components:{PCApp,Background},
   
 })
 </script>
 
 <style lang="scss">
-@import 'src/styles/theme.scss';
 @import 'src/styles/init.scss';
 .app{
   display: flex;
   flex-direction: column;
  &.default {
       @include defaultTheme();
-  }
-  .app-main{
-    height: 900px;
-    background-color: var(--body-bg);
   }
 }
 

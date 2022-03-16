@@ -2,19 +2,22 @@
 @import './theme.scss';
 
 body {
-    height: 100%;
-    width: 100%;
-    background-color: var(--body-bg);
-    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    font-family: SpecialSymbol,DINRegular,-apple-system,BlinkMacSystemFont,PingFang SC,Helvetica Neue,Hiragino Sans GB,Segoe UI,Microsoft YaHei,\5fae\8f6f\96c5\9ed1,sans-serif;
+    font-size: 14px;
+    line-height: 1.4;
+    user-select: none;
     -webkit-font-smoothing: antialiased;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB,
-        Microsoft YaHei, Arial, sans-serif;
-    overflow: hidden;
-    padding: 0;
-    margin:  0;
-
+    position: relative!important;
 }
-
-html {
-    height: 100%;
+*{
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-shadow: none;
+    border-radius: 0;
+    font-size: inherit;
+    line-height: inherit;
+    background-repeat: no-repeat;
 }

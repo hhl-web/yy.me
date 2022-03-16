@@ -1,14 +1,30 @@
-@mixin theme-var( $theme-text,$theme-body-bg) {
+///@name theme
+
+@mixin theme-var( 
+    $theme-text,
+    $theme-white,
+    $theme-black, 
+    $theme-body-bg) {
     #{--body-bg}: $theme-body-bg;
+    #{--text-color}:$theme-text;
+    #{--color-black}:$theme-black;
+    #{--color-white}: $theme-white;
 }
 
 @mixin  defaultTheme(){
     @include theme-var(
         $theme-text:rgba(#000, 0.68),
-        $theme-body-bg: #000
-    )
+        $theme-white: #fff,
+        $theme-black: #000,
+        $theme-body-bg: #e3e3e3,
+    );
 }
 
 @mixin  darkTheme(){
-    @include theme-var()
+    @include theme-var(){
+        $theme-text:#f0f0f0;
+        $theme-white:#444;
+        $theme-black:#fff;
+        $theme-body-bg:#000,
+    };
 }
