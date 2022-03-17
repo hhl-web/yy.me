@@ -2,7 +2,7 @@
     <header class="layout-header">
         <div class="layout-text">
             <div class="layout-navbar-l">
-                <nav></nav>
+                <img src='@/assets/imgs/wx.png' class="layout-img"/>
                 <span>快乐起航</span>
             </div>
             <div class="layout-navbar-r">
@@ -15,13 +15,15 @@
    
 </template> 
  
- <script>
-import {defineComponent} from 'vue'
+ <script lang="ts">
+import {defineComponent,ref} from 'vue'
 
 export default defineComponent({
     name: 'NavBar',
     props: {},
-    setup() {}
+    setup() {
+      
+    }
 });
 </script> 
  
@@ -37,7 +39,7 @@ export default defineComponent({
     line-height: 4.1rem;
     z-index: 999;
     background-color: $body-bg;
-    border-bottom: 1px solid  $body-bg;
+    border-bottom: 1px solid $body-bg
 }
 .layout-text{
     display: flex;
@@ -45,6 +47,15 @@ export default defineComponent({
     align-content: center;
     width: 1050px;
     margin: auto;
+}
+.layout-navbar-l{
+    display: flex;
+}
+
+.layout-img{
+    width: 30px;
+    height: 30px;
+    align-self: center;
 }
 .layout-nav{
     margin-bottom:2rem ;

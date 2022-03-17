@@ -3,24 +3,40 @@ import {
 	createRouter,
     createWebHistory
 } from 'vue-router'
- 
-const routes = [{
-		path: '/',
-		name: 'Home',
+ import Home from '@/pages/home.vue';
+const routes = [
+	{
+		path: '/for/home',
+		component:Home,
 		meta: {
-			title: "主页",
+			title: "何以为家",
 			keepAlive: true
 		}
 	},
-	// {
-	// 	path: '/about',
-	// 	name: 'About',
-	// 	component: '',
-	// 	meta: {
-	// 		title: '测试',
-	// 		keepAlive: false
-	// 	}
-	// }
+	{
+		path: '/for/chance',
+		component:Home,
+		meta: {
+			title: "上路是偶然",
+			keepAlive: true
+		}
+	},
+	{
+		path: '/for/me',
+		component:Home,
+		meta: {
+			title: "关于我",
+			keepAlive: true
+		}
+	},
+	{
+		path: '/for/live',
+		component:Home,
+		meta: {
+			title: "思考生活",
+			keepAlive: true
+		}
+	}
 ]
  
 const router = createRouter({

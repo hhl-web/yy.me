@@ -1,21 +1,14 @@
 <template>
     <NavBar/>
     <div class="pc-main">
-        <div class="pc-menu">
-            <div class="nav-list">
-                 <nav :key="index" v-for="(item,index) in menuOpts" class="menu-nav">
-              <a> {{item.label}}</a>
-            </nav>
-            </div>
-        </div>
-          <!-- -->
+        <Menu/>
         <div class="pc-container"> 
-            bubudedede
+            <Swiper/>
             <router-view></router-view>
         </div>
-        <div class="pc-aside">
+        <!-- <div class="pc-aside">
             lallal
-        </div>
+        </div> -->
     </div>
     <Footer/>
 </template>
@@ -23,28 +16,15 @@
 <script lang="ts">
 import {defineComponent,ref} from 'vue';
 import {NavBar,Footer} from '../../layout';
+import Menu from '../../menu/index.vue';
+import Swiper from '../../swiper/index.vue'
 export default defineComponent({
   name: 'App',
-  components:{NavBar,Footer},
+  components:{NavBar,Footer,Menu,Swiper},
   setup(){
-      const menuOpts =ref([{
-          label:'春天是希望的季节',
-          value:1
-      },
-      {
-          label:'夏天是燥热的世界',
-          value:1
-      },
-      {
-          label:'秋天是收获的果实',
-          value:1
-      },
-      {
-          label:'冬天蠢蠢欲动的心',
-          value:1
-      }])
+   
     return {
-      menuOpts
+      
     }
   }
  
@@ -64,31 +44,7 @@ export default defineComponent({
     margin: 0 auto;
     height: 2000px;
     padding-top: 4.1rem;
-}
-.pc-menu{
-    height: auto;
-}
-.menu-nav{
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 3em;
-    line-height: 3em;
-    padding: 0 1.236rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 700;
-    font-family: webfont-normal,DINRegular;
-    letter-spacing: .5px;
-    margin-bottom: 0.618rem;
-    border-radius: 4px;
-    overflow: hidden;
-}
-.nav-list{
-    width: 160px;
-    padding: 0;
-    margin: 0;
-    position: fixed;
+    top: 20px;
 }
 .pc-aside{
     order: 3;
@@ -97,9 +53,7 @@ export default defineComponent({
 }
 .pc-container{
     position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-
+    width: calc(100% - 160px);
+    left: 160px;
 }
 </style>

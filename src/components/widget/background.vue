@@ -23,18 +23,14 @@
     height: 100%;
     top: 0;
     left: 0;
-    background-color: rgba($color: #000, $alpha: 0.2);
+    background-color: #0e0e0e;
     z-index: -1;
     .image {
       position: absolute;
       width: 100%;
       height: 100%;
       opacity: 0.3;
-      background:   url('@/assets/imgs/background.png') repeat;
-
-      &.dark {
-        opacity: 0.2;
-      }
+      background:  url('@/assets/imgs/background.jpg');
     }
   }
 </style>
