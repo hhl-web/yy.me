@@ -1,6 +1,5 @@
 <template>
   <div class="background">
-    <div class="image"></div>
   </div>
 </template>
 
@@ -19,18 +18,12 @@
 
   .background {
     position: fixed;
-    width: 100%;
-    height: 100%;
     top: 0;
     left: 0;
-    background-color: #0e0e0e;
+    background-color: #000;
     z-index: -1;
-    .image {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      opacity: 0.3;
-      background:  url('@/assets/imgs/background.jpg');
-    }
+    width: 100%;
+    height: 100%;
+    background: url("https://cdn.jsdelivr.net/gh/Mu-Yan/Mu-Yan.github.io/blogsImg/17.jpg") center center / cover no-repeat
   }
 </style>

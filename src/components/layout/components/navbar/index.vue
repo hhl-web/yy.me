@@ -3,7 +3,8 @@
         <div class="layout-text">
             <div class="layout-navbar-l">
                 <img src='@/assets/imgs/wx.png' class="layout-img"/>
-                <span>快乐起航</span>
+                <span>YYME </span>
+                <span>历历万乡 </span>
             </div>
             <div class="layout-navbar-r">
                 <span>您好,陌生人</span>
