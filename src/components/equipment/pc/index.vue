@@ -1,26 +1,26 @@
 <template>
     <NavBar/>
+    <Swiper/>
     <div class="pc-main">
         <Menu/>
         <div class="pc-container"> 
-            <Swiper/>
             <router-view></router-view>
+            <div class="pc-aside">
+                <Aside/>
+            </div>
         </div>
-        <!-- <div class="pc-aside">
-            lallal
-        </div> -->
     </div>
     <Footer/>
 </template>
 
 <script lang="ts">
 import {defineComponent,ref} from 'vue';
-import {NavBar,Footer} from '../../layout';
+import {NavBar,Footer,Aside} from '../../layout';
 import Menu from '../../menu/index.vue';
 import Swiper from '../../swiper/index.vue'
 export default defineComponent({
   name: 'App',
-  components:{NavBar,Footer,Menu,Swiper},
+  components:{NavBar,Footer,Menu,Swiper,Aside},
   setup(){
    
     return {
@@ -38,22 +38,18 @@ export default defineComponent({
 .pc-main{
     position: relative;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     width: 1020px;
     margin: 0 auto;
-    height: 2000px;
-    padding-top: 4.1rem;
     top: 20px;
-}
-.pc-aside{
-    order: 3;
-    flex-shrink: 0;
-    margin-left: 1.236rem;
+
 }
 .pc-container{
-    position: relative;
-    width: calc(100% - 160px);
-    left: 160px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 600px;
+    margin-top: 10px;
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
     <div class="layout-footer">
-        <div class="footer-container"> 世界之大 @闽C | 小琳同学博客 | VUE.VITE.KOA | 周知 </div>
+       世界之大 @闽C | 小琳同学博客 | VUE.VITE.KOA | 周知
     </div>
 </template> 
  
@@ -19,9 +19,15 @@ export default defineComponent({
     margin: 0 auto;
     width: 1020px;
     color: red;
-}
-.footer-container{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #666;
+    font-size: 11px;
+    margin: 0 auto 1rem auto;
+    vertical-align: top;
     text-align: center;
-
 }
+
 </style> 

@@ -1,17 +1,8 @@
 <template>
     <header class="layout-header">
         <div class="layout-text">
-            <div class="layout-navbar-l">
-                <img src='@/assets/imgs/wx.png' class="layout-img"/>
-                <span>YYME </span>
-                <span>历历万乡 </span>
-            </div>
-            <div class="layout-navbar-r">
-                <span>您好,陌生人</span>
-                <!-- 语言切换 -->
-            </div>
+           系统设置
         </div>
-        <div class="layout-nav"></div>
     </header>
    
 </template> 
@@ -34,32 +25,11 @@ export default defineComponent({
 .layout-header{
     position: fixed;
     top: 0;
-    left: 0;
-    width: 100%;
-    height: 4.1rem;
-    line-height: 4.1rem;
+    right: 0;
     z-index: 999;
-    background-color: $body-bg;
-    border-bottom: 1px solid $body-bg;
-    box-shadow: 10px 0px #fff, .1em 0.2em;
-}
-.layout-text{
-    display: flex;
-    justify-content: space-between;
-    align-content: center;
-    width: 1020px;
-    margin: auto;
-}
-.layout-navbar-l{
-    display: flex;
+    background-color:#2d2d2d;
+    color: #fff;
+    font-weight: 500;
 }
 
-.layout-img{
-    width: 30px;
-    height: 30px;
-    align-self: center;
-}
-.layout-nav{
-    margin-bottom:2rem ;
-}
 </style> 

@@ -1,4 +1,4 @@
-///@name theme
+
 
 @mixin theme-var( 
     $theme-text,
@@ -6,10 +6,11 @@
     $theme-black, 
     $theme-body-bg,
     ) {
-    #{--body-bg}: $theme-body-bg;    //主题色
+   
     #{--text-color}:$theme-text;  //文本颜色
-    #{--color-black}:$theme-black;  //黑色
     #{--color-white}: $theme-white;  //白色
+    #{--color-black}:$theme-black;  //黑色
+    #{--body-bg}: $theme-body-bg;    //主题色
 }
 
 @mixin  defaultTheme(){
@@ -22,10 +23,10 @@
 }
 
 @mixin  darkTheme(){
-    @include theme-var(){
-        $theme-text:#f0f0f0;
-        $theme-white:#444;
-        $theme-black:#fff;
-        $theme-body-bg:#000;
-    };
+    @include theme-var(
+        $theme-text:#f0f0f0,
+        $theme-white:#000,
+        $theme-black:#fff,
+        $theme-body-bg:#3f3f3f,
+    )
 }

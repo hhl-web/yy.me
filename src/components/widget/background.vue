@@ -21,16 +21,16 @@
     top: 0;
     left: 0;
     z-index: -1;
-    background-color: $body-bg;
+    background-color: #181818;
     width: 100%;
     height: 100%;
- 
 }
-.image {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: url("@/assets/imgs/back.jpeg");
-    opacity: 0.4;
-}
+// .image {
+//     position: absolute;
+//     width: 100%;
+//     height: 100%;
+//     // background: url("@/assets/imgs/back.jpeg");
+//     // opacity: 0.8;
+
+// }
 </style>
