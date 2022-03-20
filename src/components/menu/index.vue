@@ -66,7 +66,7 @@ export default defineComponent({
     overflow: hidden;
     color: red;
     &:hover{
-        color: blue;
+        color: #606266;
         background: #fff;
     }
 }

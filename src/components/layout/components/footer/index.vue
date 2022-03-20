@@ -17,7 +17,7 @@ export default defineComponent({
 <style scoped lang="scss">
 .layout-footer{
     margin: 0 auto;
-    width: 1050px;
+    width: 1020px;
     color: red;
 }
 .footer-container{

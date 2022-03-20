@@ -1,5 +1,6 @@
 <template>
   <div class="background">
+      <div class="image"></div>
   </div>
 </template>
 
@@ -15,15 +16,21 @@
 
 <style lang="scss" scoped>
   @import 'src/styles/init.scss';
-
-  .background {
+.background{
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #000;
     z-index: -1;
+    background-color: $body-bg;
     width: 100%;
     height: 100%;
-    background: url("https://cdn.jsdelivr.net/gh/Mu-Yan/Mu-Yan.github.io/blogsImg/17.jpg") center center / cover no-repeat
-  }
+ 
+}
+.image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url("@/assets/imgs/back.jpeg");
+    opacity: 0.4;
+}
 </style>

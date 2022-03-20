@@ -40,7 +40,7 @@ export default defineComponent({
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 1050px;
+    width: 1020px;
     margin: 0 auto;
     height: 2000px;
     padding-top: 4.1rem;

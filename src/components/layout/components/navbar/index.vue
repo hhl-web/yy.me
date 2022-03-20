@@ -40,13 +40,14 @@ export default defineComponent({
     line-height: 4.1rem;
     z-index: 999;
     background-color: $body-bg;
-    border-bottom: 1px solid $body-bg
+    border-bottom: 1px solid $body-bg;
+    box-shadow: 10px 0px #fff, .1em 0.2em;
 }
 .layout-text{
     display: flex;
     justify-content: space-between;
     align-content: center;
-    width: 1050px;
+    width: 1020px;
     margin: auto;
 }
 .layout-navbar-l{
