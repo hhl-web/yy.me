@@ -23,7 +23,7 @@ export default defineComponent({
   flex-direction: column;
  &.default {
       // @include defaultTheme();
-      @include darkTheme()
+      // @include darkTheme()
   }
 }
 

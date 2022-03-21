@@ -24,10 +24,10 @@
     @include theme-var(
         $theme-white: #fff,    
         $theme-black: #000,        
-        $theme-body-bg: rgba(0,0,0,0.2),
+        $theme-body-bg:#f7f7f7,
         $theme-color-title:#0088f5,
-        $theme-color-module:#5bac4a,
-        $theme-module-bg:#fff,
+        $theme-color-module:#000000AD,
+        $theme-module-bg:rgba(255, 255, 255, .6),
         $theme-color-module-text:#000000AD
 
     );  
@@ -41,7 +41,7 @@
         $theme-color-title:#b9babc,
         $theme-color-module:#5bac4a,
         $theme-module-bg:rgba(68, 68, 68, 0.6),
-        $theme-color-module-text:#ffff
+        $theme-color-module-text:#ffff,
 
     )
 }

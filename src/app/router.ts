@@ -4,6 +4,7 @@ import {
     createWebHistory
 } from 'vue-router'
  import Home from '@/pages/home.vue';
+ import Admin from '@/pages/admin.vue'
 const routes = [
 	{
 		path: '/for/home',
@@ -35,6 +36,13 @@ const routes = [
 		meta: {
 			title: "思考生活",
 			keepAlive: true
+		}
+	},
+	{
+		path: '/admin/edit',
+		component:Admin,
+		meta: {
+			title: "后台编辑",
 		}
 	}
 ]

@@ -17,10 +17,11 @@
 import {defineComponent,ref} from 'vue';
 import {NavBar,Footer,Aside} from '../../layout';
 import Menu from '../../menu/index.vue';
-import Swiper from '../../swiper/index.vue'
+import Swiper from '../../swiper/index.vue';
+import Admin from '../../../pages/admin.vue'
 export default defineComponent({
   name: 'App',
-  components:{NavBar,Footer,Menu,Swiper,Aside},
+  components:{NavBar,Footer,Menu,Swiper,Aside,Admin},
   setup(){
    
     return {

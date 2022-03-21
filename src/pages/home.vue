@@ -57,6 +57,7 @@ import useImgs from "@/hooks/useImgs";
     background-color:$module-bg;
     border-radius: 5px;
     border-color:$module-bg;
+    box-shadow: 0 4px 10px rgb(0 0 0 / 5%), 0 0 1px rgb(0 0 0 / 10%);
   }
 img{
   width: 110px;
@@ -76,11 +77,11 @@ img{
     justify-content: space-between;
     margin-top: 10px;
     margin-bottom: 0.618rem;
-    font-weight: 700;
+    font-weight: 800;
     color: $color-module-text;
 }
 .info{
-   color: $color-module-text;
+   color: $color-module;
 }
 .footer{
     height: 2em;

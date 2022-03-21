@@ -105,8 +105,8 @@ export default defineComponent({
     overflow: hidden;
     color: red;
       &:hover{
-        color: $color-module;
-        border-bottom: 1px solid $color-module;
+        color: #5bac4a;
+        border-bottom: 1px solid #5bac4a;
         font-weight: 700;
     }
 }

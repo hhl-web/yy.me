@@ -1,9 +1,9 @@
 <template>
     <header class="layout-header">
-        <div class="layout-text">
+        <div class="layout-text" @click="onClick">
            MORE
         </div>
-         <div class="layout-fa">
+         <div class="layout-fa" @click="onClick">
             <i class="fa"></i>
             <i class="fa"></i>
             <i class="fa"></i>
@@ -14,12 +14,19 @@
  
  <script lang="ts">
 import {defineComponent,ref} from 'vue'
+import router from '../../../../app/router'
 
 export default defineComponent({
     name: 'NavBar',
     props: {},
-    setup() {
-      
+    setup(props,ctx:any) {
+        const onClick=()=>{
+            console.log('onClick',router);
+            router.push({path:'/admin/edit'})
+        }
+        return {
+            onClick
+        }
     }
 });
 </script> 
