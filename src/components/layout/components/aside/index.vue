@@ -36,11 +36,12 @@ export default defineComponent({
 @use 'sass:math';
 @import 'src/styles/init.scss';
 .layout-aside{
-   width: 250px;
-   display: flex;
-   flex-direction: column;
-   height: auto;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    height: auto;
     color: #CCFFB6;
+    margin-right:10px;
 }
 .el-card{
     margin: 10px 0;

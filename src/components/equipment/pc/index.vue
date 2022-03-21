@@ -6,7 +6,7 @@
         <div class="pc-container"> 
             <router-view></router-view>
             <div class="pc-aside">
-                <Aside/>
+                <!-- <Aside/> -->
             </div>
         </div>
     </div>

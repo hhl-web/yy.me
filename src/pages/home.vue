@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <div class="home-list">
-          <img src="@/assets/imgs/back.jpeg"/>
+          <img :src="getAssetsFile('back.jpeg')"/>
           <div class="list-item">
             <div class="list-container">
               <span class="title">{{homeText}}</span>
@@ -18,12 +18,14 @@
 <script lang="ts">
 import { defineComponent,watch,ref } from 'vue';
 import { useRoute } from 'vue-router'
-
+import useImgs from "@/hooks/useImgs";
   export default defineComponent({
     name: 'Home',
     setup(props,ctx) {
         const route = useRoute();
-        const homeText:any= ref('')
+        const homeText:any= ref('');
+        const imgs = useImgs();
+        const getAssetsFile =imgs.getAssetsFile
         watch(
             ()=> [route.fullPath,route.meta],
             ([newPath,newMeta]:any) => {
@@ -34,7 +36,8 @@ import { useRoute } from 'vue-router'
             }
         )
         return {
-            homeText
+            homeText,
+            getAssetsFile
         }
     }
   })
@@ -49,24 +52,24 @@ import { useRoute } from 'vue-router'
   font-weight: 500;
 }
 .home-list{
-    width:40rem;
-    height: 6rem;
+    width:35rem;
+    height: 7rem;
     background-color:$module-bg;
     border-radius: 5px;
-    border-color:$module-bg ;
+    border-color:$module-bg;
   }
 img{
   width: 110px;
-  height: 75px;
+  height: 95px;
   float: left;
-  margin: 0.6rem;
+  margin: 0.5rem 0.8rem 0.8rem 0.5rem;
 }
 .list-container{
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: 100%;
+    height: 6.5rem;
 }
 .title{
     display: flex;
@@ -76,6 +79,9 @@ img{
     font-weight: 700;
     color: $color-module-text;
 }
+.info{
+   color: $color-module-text;
+}
 .footer{
     height: 2em;
     line-height: 2em;
@@ -83,7 +89,7 @@ img{
     justify-content: space-between;
     align-items: baseline;
     overflow: hidden;
-    font-size: 12.432px;
+    font-size: 11px;
     white-space: nowrap;
     text-overflow: ellipsis;
     word-wrap: normal;
