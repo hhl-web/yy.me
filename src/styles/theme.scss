@@ -1,32 +1,46 @@
 
 
 @mixin theme-var( 
-    $theme-text,
     $theme-white,
     $theme-black, 
     $theme-body-bg,
+    $theme-color-title,
+    $theme-color-module,
+    $theme-module-bg,
+    $theme-color-module-text
     ) {
    
-    #{--text-color}:$theme-text;  //文本颜色
-    #{--color-white}: $theme-white;  //白色
-    #{--color-black}:$theme-black;  //黑色
-    #{--body-bg}: $theme-body-bg;    //主题色
+    #{--color-white}: $theme-white;  //白
+    #{--color-black}:$theme-black;  //黑
+    #{--body-bg}: $theme-body-bg;    //背景主题色
+    #{--color-title}:$theme-color-title ;  //题主色
+    #{--color-module}:$theme-color-module ;  //题主色
+    #{--module-bg}:$theme-module-bg ;  //题主色
+    #{--color-module-text}:$theme-color-module-text;
+    
 }
 
 @mixin  defaultTheme(){
     @include theme-var(
-        $theme-text:rgba(#000, 0.68),  
         $theme-white: #fff,    
         $theme-black: #000,        
-        $theme-body-bg: #fff,
+        $theme-body-bg: rgba(0,0,0,0.2),
+        $theme-color-title:#0088f5,
+        $theme-color-module:#5bac4a,
+        $theme-module-bg:#fff,
+        $theme-color-module-text:#000000AD
+
     );  
 }
 
 @mixin  darkTheme(){
     @include theme-var(
-        $theme-text:#f0f0f0,
         $theme-white:#000,
         $theme-black:#fff,
-        $theme-body-bg:#3f3f3f,
+        $theme-body-bg:#181818,
+        $theme-color-title:#b9babc,
+        $theme-color-module:#5bac4a,
+        $theme-module-bg:rgba(68, 68, 68, 0.9),
+        $theme-color-module-text:#b9babc,
     )
 }

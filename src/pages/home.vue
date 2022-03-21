@@ -41,18 +41,19 @@ import { useRoute } from 'vue-router'
 </script>
 
 <style lang="scss" scoped>
+@use 'sass:math';
+@import 'src/styles/init.scss';
 .home{
   display: flex;
   flex-direction: column;
-  color: #fff;
   font-weight: 500;
 }
 .home-list{
     width:40rem;
     height: 6rem;
-    background-color:#2d2d2d ;
+    background-color:$module-bg;
     border-radius: 5px;
-    border-color:#2d2d2d ;
+    border-color:$module-bg ;
   }
 img{
   width: 110px;
@@ -73,9 +74,7 @@ img{
     margin-top: 10px;
     margin-bottom: 0.618rem;
     font-weight: 700;
-}
-.info{
-
+    color: $color-module-text;
 }
 .footer{
     height: 2em;

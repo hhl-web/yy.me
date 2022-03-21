@@ -56,6 +56,8 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
+@use 'sass:math';
+@import 'src/styles/init.scss';
 .menu{
     padding: 0;
     margin: 0;
@@ -85,7 +87,7 @@ export default defineComponent({
   line-height: 2rem;
   font-style: normal;
   font-weight: 700;
-  color: #b9babc;
+  color:$color-title ;
   margin-top: 0;
   margin-bottom: 0;
 }
@@ -103,8 +105,8 @@ export default defineComponent({
     overflow: hidden;
     color: red;
       &:hover{
-        color: #5BAC4A;
-        border-bottom: 1px solid #5BAC4A;
+        color: $color-module;
+        border-bottom: 1px solid $color-module;
         font-weight: 700;
     }
 }

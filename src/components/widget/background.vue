@@ -21,16 +21,8 @@
     top: 0;
     left: 0;
     z-index: -1;
-    background-color: #181818;
+    background-color: $body-bg;
     width: 100%;
     height: 100%;
 }
-// .image {
-//     position: absolute;
-//     width: 100%;
-//     height: 100%;
-//     // background: url("@/assets/imgs/back.jpeg");
-//     // opacity: 0.8;
-
-// }
 </style>

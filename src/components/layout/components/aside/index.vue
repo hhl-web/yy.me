@@ -33,25 +33,27 @@ export default defineComponent({
 </script> 
  
 <style scoped lang="scss">
+@use 'sass:math';
+@import 'src/styles/init.scss';
 .layout-aside{
    width: 250px;
    display: flex;
    flex-direction: column;
    height: auto;
-    color: #2d2d2d;
+    color: #CCFFB6;
 }
 .el-card{
     margin: 10px 0;
-    background-color:  rgba(68, 68, 68, .6);
-    color: #b9babc;
+    background-color:  $module-bg;
+    color: #CCFFB6;;
     font-weight: 500;
-    border-color:rgba(68, 68, 68, .6);
+
 }
 .aside-ipt{
     font-weight: 500;
-    background-color: #2d2d2d;
+    background-color: $module-bg;
 }
 input{
-    background-color:#2d2d2d;
+    background-color:$module-bg;
 }
 </style> 
