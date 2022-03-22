@@ -7,7 +7,6 @@
         </div>
          <Edit/>
     </div>
-    <!-- <div class="admin-bg"></div> -->
 </template>
 
 <script lang="ts">
@@ -41,16 +40,6 @@ import router from '@/app/router';
     align-items: center;
 
 }
-// .admin-bg{
-//     position: fixed;
-//     width: 100%;
-//     height: 100%;
-//     background: #c2c2c2;
-//     opacity: 0.6;
-//     z-index: -1;
-//     top: 0;
-//     bottom: 0;
-// }
 .admin-header{
     display: flex;
     width: 100%;
