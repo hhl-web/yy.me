@@ -14,7 +14,7 @@
  
  <script lang="ts">
 import {defineComponent,ref} from 'vue'
-import router from '../../../../app/router'
+import router from '@/app/router';
 
 export default defineComponent({
     name: 'NavBar',

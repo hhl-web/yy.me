@@ -4,7 +4,7 @@
           <img :src="getAssetsFile('back.jpeg')"/>
           <div class="list-item">
             <div class="list-container">
-              <span class="title">{{homeText}}</span>
+              <span class="title">{{meta.title}}</span>
               <p class="info">1111</p>
               <div class="footer">
                 <span>点赞</span>
@@ -17,27 +17,17 @@
 
 <script lang="ts">
 import { defineComponent,watch,ref } from 'vue';
-import { useRoute } from 'vue-router'
 import useImgs from "@/hooks/useImgs";
+import {useRouter,MetaProps} from '@/hooks/useRouter'
   export default defineComponent({
     name: 'Home',
     setup(props,ctx) {
-        const route = useRoute();
-        const homeText:any= ref('');
+        const {route,meta}=useRouter()
         const imgs = useImgs();
-        const getAssetsFile =imgs.getAssetsFile
-        watch(
-            ()=> [route.fullPath,route.meta],
-            ([newPath,newMeta]:any) => {
-                homeText.value =newMeta.title;
-                console.log('监听路由',newPath,newMeta)
-            },{
-                immediate:true
-            }
-        )
+        const getAssetsFile =imgs.getAssetsFile;
         return {
-            homeText,
-            getAssetsFile
+            getAssetsFile,
+            meta
         }
     }
   })
@@ -57,7 +47,7 @@ import useImgs from "@/hooks/useImgs";
     background-color:$module-bg;
     border-radius: 5px;
     border-color:$module-bg;
-    box-shadow: 0 4px 10px rgb(0 0 0 / 5%), 0 0 1px rgb(0 0 0 / 10%);
+    box-shadow: 0 0 10px #ccc
   }
 img{
   width: 110px;
