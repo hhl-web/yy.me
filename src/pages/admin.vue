@@ -1,9 +1,9 @@
 <template>
     <div id="admin">
         <div class="admin-header">
-            <el-input placeholder="输入文章标题"></el-input>
-            <el-button type="primary">发布文章</el-button>
-            <el-button type="primary" @click="go2Home">返回首页</el-button>
+            <a-input placeholder="输入文章标题"></a-input>
+            <a-button type="primary">发布文章</a-button>
+            <a-button type="primary" @click="go2Home">返回首页</a-button>
         </div>
          <Edit/>
     </div>

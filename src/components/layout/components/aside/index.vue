@@ -1,24 +1,24 @@
 <template>
     <div class="layout-aside">
-        <el-card shadow="always">
-           <el-input placeholder="所见与所闻" class="aside-ipt" >
+        <a-card shadow="always">
+           <a-input placeholder="所见与所闻" class="aside-ipt" >
                 <template #append>
-                    <el-button :icon="Search" />
+                    <a-button :icon="Search" />
                 </template>
-            </el-input>
-        </el-card>
-        <el-card>
+            </a-input>
+        </a-card>
+        <a-card>
             社会火的新闻
-        </el-card>
-        <el-card>
+        </a-card>
+        <a-card>
            广告
-        </el-card>
-        <el-card>
+        </a-card>
+        <a-card>
            日期
-        </el-card>
-        <el-card>
+        </a-card>
+        <a-card>
            广告
-        </el-card>
+        </a-card>
     </div>
 </template> 
  
@@ -43,7 +43,7 @@ export default defineComponent({
     color: #CCFFB6;
     margin-right:10px;
 }
-.el-card{
+.a-card{
     margin: 10px 0;
     background-color:  $module-bg;
     color: #CCFFB6;;

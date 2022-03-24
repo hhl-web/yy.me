@@ -1,8 +1,8 @@
-import ElementPlus from 'element-plus';
-import 'element-plus/dist/index.css';
+import 'ant-design-vue/dist/antd.css';
+import Antd from 'ant-design-vue';
 import router from './router';
 
 export default[
-    ElementPlus,
+    Antd,
     router
 ]
