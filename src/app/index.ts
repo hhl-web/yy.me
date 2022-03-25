@@ -1,8 +1,33 @@
-import 'ant-design-vue/dist/antd.css';
-import Antd from 'ant-design-vue';
 import router from './router';
 
+import { 
+    Button,
+    Switch,
+    Calendar,
+    Field,
+    Empty,
+    Lazyload,
+    List,
+    Skeleton,
+    Sticky,
+    Swipe,
+    SwipeItem,
+    Tag,
+    Search,
+    Uploader
+ } from 'vant';
 export default[
-    Antd,
-    router
+    router,
+    Button,
+    Switch,
+    Calendar,
+    Field,
+    Empty,
+    Lazyload,
+    List,
+    Skeleton,
+    Sticky,
+    Tag,
+    Search,
+    Uploader
 ]

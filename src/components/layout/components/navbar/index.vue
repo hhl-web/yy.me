@@ -9,7 +9,6 @@
             <i class="fa"></i>
         </div>
     </header>
-   
 </template> 
  
  <script lang="ts">
@@ -70,5 +69,6 @@ export default defineComponent({
     margin: 3px;
     font-size: 2em;
 }
+
 
 </style> 

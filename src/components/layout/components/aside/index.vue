@@ -1,30 +1,29 @@
 <template>
     <div class="layout-aside">
-        <a-card shadow="always">
-           <a-input placeholder="所见与所闻" class="aside-ipt" >
+        <div shadow="always">
+           <van-field placeholder="所见与所闻" class="aside-ipt" >
                 <template #append>
-                    <a-button :icon="Search" />
+                    <van-button :icon="Search" ></van-button>
                 </template>
-            </a-input>
-        </a-card>
-        <a-card>
+            </van-field>
+        </div>
+        <div>
             社会火的新闻
-        </a-card>
-        <a-card>
+        </div>
+        <div>
            广告
-        </a-card>
-        <a-card>
+        </div>
+        <div>
            日期
-        </a-card>
-        <a-card>
+        </div>
+        <div>
            广告
-        </a-card>
+        </div>
     </div>
 </template> 
  
  <script>
 import {defineComponent} from 'vue'
-
 export default defineComponent({
     name: 'Aside',
     props: {},

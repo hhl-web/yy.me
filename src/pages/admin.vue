@@ -1,28 +1,45 @@
 <template>
     <div id="admin">
         <div class="admin-header">
-            <a-input placeholder="输入文章标题"></a-input>
-            <a-button type="primary">发布文章</a-button>
-            <a-button type="primary" @click="go2Home">返回首页</a-button>
+            <van-field  placeholder="输入文章标题" class="admin-title" v-model="title"></van-field>
+            <van-button type="primary" class="admin-btn" @click="submit">发布</van-button>
+            <van-button  :to="'/for/home'" class="admin-btn">首页</van-button>
         </div>
-         <Edit/>
+        <Edit ref="editRef"/>
     </div>
+    <AdminPopup v-if="popshow"/>
 </template>
 
 <script lang="ts">
 import { defineComponent,watch,ref,onUpdated } from 'vue';
-import Edit from '@/components/wangeditor/index.vue'
-import About from './about.vue';
+import Edit from '@/components/wangeditor/index.vue';
+import {AdminPopup} from '@/components/widget'
 import router from '@/app/router';
   export default defineComponent({
     name: 'Admin',
-    components:{Edit, About},
+    components:{Edit,AdminPopup},
     setup(props,ctx:any) {
+        const editRef =ref();
+        const title =ref('');
+        const popshow =ref(false)
+        const params:any =ref({});
         const go2Home=()=>{
-            router.push({path:'/for/home'})
+            router.push({path:''})
+        }
+        const submit =()=>{
+            console.log(editRef.value.content,title.value);
+            popshow.value=!popshow.value;
+        }
+        const afterRead =(file:File)=>{
+            console.log(file)
         }
         return {
-           go2Home
+           go2Home,
+           title,
+           editRef,
+           submit,
+           popshow
+
         }
     }
   })
@@ -30,8 +47,7 @@ import router from '@/app/router';
 
 <style lang="scss" scoped>
 #admin{
-    height: 100%;
-    width: 1020px;
+    // width: 1020px;
     margin: 70px auto;
     display: flex;
     flex-direction: column;
@@ -49,6 +65,17 @@ import router from '@/app/router';
     height: auto;
     width: 100%;
     display: flex;
-
+}
+.admin-title{
+    margin-right: 10px;
+}
+.admin-btn{
+    width: 120px;
+    margin: 2px;
+}
+.admin-upload{
+    height: 100px;
+    width: 100px;
+    background: #fff;
 }
 </style>

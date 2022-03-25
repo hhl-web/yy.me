@@ -5,6 +5,7 @@ import appConfig from './app/index';
 
 const app =createApp(App);
 for(const key of appConfig){
+    console.log(key)
     app.use(key)
 }
 

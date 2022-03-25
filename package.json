@@ -10,8 +10,8 @@
     "lint:fix": "npm run lint --fix"
   },
   "dependencies": {
-    "ant-design-vue": "^2.2.8",
     "sass": "^1.49.9",
+    "vant": "^3.4.6",
     "vue": "^3.2.25",
     "vue-router": "^4.0.14",
     "wangeditor": "^4.7.12"
@@ -30,6 +30,7 @@
     "swiper": "^8.0.7",
     "typescript": "^4.6.2",
     "vite": "^2.8.0",
+    "vite-plugin-style-import": "^1.4.1",
     "vue-tsc": "^0.29.8"
   }
 }
