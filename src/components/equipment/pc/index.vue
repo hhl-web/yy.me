@@ -48,6 +48,7 @@ export default defineComponent({
     width: 1020px;
     margin: 0 auto;
     top: 20px;
+    padding: 15px;
 
 }
 .pc-container{
