@@ -5,18 +5,18 @@
           <span class="label">分类:</span>
           <div class="content">
               <template v-for="(item,index) in classifyOpts" :key="index">
-                  <span class="tag">{{item.label}}</span>
+                  <span class="tag" @click="onClick(item)">{{item.label}}</span>
               </template>
           </div>
       </div>
       <div class="pop-block">
           <span class="label">文章封面:</span>
           <div class="content">
-            <van-uploader :after-read="afterRead"></van-uploader>
+            <van-uploader v-model="file"></van-uploader>
             <div class="tip"></div>
           </div>
       </div>
-      <div class="pop-block footer">
+      <div class="footer">
           <van-button class="btn" type="default" @click="cancel">取消</van-button>
           <van-button class="btn" type="primary" @click="submit">发布</van-button>
       </div>
@@ -27,22 +27,48 @@
   import { defineComponent,ref } from 'vue'
   export default defineComponent({
     name: 'AdminPop',
-    setup() {
-      const classifyOpts =ref([])
-      const afterRead=(file:File)=>{
-        console.log(file)
-      }
+    setup(props,ctx:any) {
+      const classifyOpts =ref([
+        {
+          label:'何以为家',
+          value:1
+        },
+        {
+          label:'上路是偶然',
+          value:2
+        },
+        {
+          label:'关于我',
+          value:3
+        },
+        {
+          label:'思考生活',
+          value:4
+        },
+      ]);
+      const popupValue:any =ref({});
+      const file:any =ref();
+      const classify =ref();
       const submit =()=>{
-
+        console.log(ctx)
+        ctx.emit('onSubmit',{
+          file:file.value,
+          classify:classify.value
+        })
       }
       const cancel=()=>{
-        
+         ctx.emit('onCancel');
+      }
+      const onClick=(item:any)=>{
+        classify.value =item;
       }
       return{
         classifyOpts,
-        afterRead,
         submit,
-        cancel
+        cancel,
+        onClick,
+        popupValue,
+        file
       }
     }
   })
@@ -96,5 +122,16 @@
 }
 .btn{
   margin: 0 10px;
+}
+.tag{
+  color: #1d2129;
+  font-size: 14px;
+  margin: 10px;
+  cursor: pointer;
+}
+.pop-block{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 </style>

@@ -7,7 +7,10 @@
         </div>
         <Edit ref="editRef"/>
     </div>
-    <AdminPopup v-if="popshow"/>
+    <template  v-if="popshow">
+        <AdminPopup @onSubmit="onSubmit" @onCancel="onCancel"/>
+    </template>
+  
 </template>
 
 <script lang="ts">
@@ -15,6 +18,8 @@ import { defineComponent,watch,ref,onUpdated } from 'vue';
 import Edit from '@/components/wangeditor/index.vue';
 import {AdminPopup} from '@/components/widget'
 import router from '@/app/router';
+import {apiImgUrl} from '@/apis/imgUrl';
+import {blobToBase64} from '@/utils/img'
   export default defineComponent({
     name: 'Admin',
     components:{Edit,AdminPopup},
@@ -27,18 +32,33 @@ import router from '@/app/router';
             router.push({path:''})
         }
         const submit =()=>{
-            console.log(editRef.value.content,title.value);
             popshow.value=!popshow.value;
         }
         const afterRead =(file:File)=>{
             console.log(file)
+        }
+        const  onSubmit= async (params:any)=>{
+            console.log(params.file,params.file[0].file);
+            const urlBase64 :any=await blobToBase64(params.file[0].file);
+            const ret =await apiImgUrl({
+                name:params.file[0].file.name,
+                message:'图片',
+                content:urlBase64.substring(urlBase64.indexOf(',')+1)
+            });
+            console.log(ret)
+        }
+        const onCancel=()=>{
+            console.log(123)
+            popshow.value=false
         }
         return {
            go2Home,
            title,
            editRef,
            submit,
-           popshow
+           popshow,
+           onSubmit,
+           onCancel
 
         }
     }
