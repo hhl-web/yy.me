@@ -1,7 +1,7 @@
 import {createService} from './index';
 import {AjaxResult,AjaxResponseData,AjaxRequestConfig,AjaxRequestErrorConfig,AjaxResponse} from '@/types/http';
 enum BackendPrefixURLEnum {
-    BASE_SERVICE ='',
+    BASE_SERVICE ='http://localhost:3009',
     IMGURL_SERVICE='https://api.github.com'
 }
 type BackendURLKeys = keyof typeof BackendPrefixURLEnum;

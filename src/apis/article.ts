@@ -8,7 +8,7 @@ const service = httpServices.BASE_SERVICE;
  * 创建文章
  */
 export const apiArticleCreate =(params:any)=>{
-    service.post('/api/article/create',params)
+    return service.post('/api/article/create',params)
 }
 /**
  * 

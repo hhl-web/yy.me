@@ -50,7 +50,6 @@
       const file:any =ref();
       const classify =ref();
       const submit =()=>{
-        console.log(ctx)
         ctx.emit('onSubmit',{
           file:file.value,
           classify:classify.value

@@ -5,7 +5,7 @@
             <van-button type="primary" class="admin-btn" @click="submit">发布</van-button>
             <van-button  :to="'/for/home'" class="admin-btn">首页</van-button>
         </div>
-        <Edit ref="editRef"/>
+        <Edit @onEdit="onEdit"/>
     </div>
     <template  v-if="popshow">
         <AdminPopup @onSubmit="onSubmit" @onCancel="onCancel"/>
@@ -18,34 +18,47 @@ import { defineComponent,watch,ref,onUpdated } from 'vue';
 import Edit from '@/components/wangeditor/index.vue';
 import {AdminPopup} from '@/components/widget'
 import router from '@/app/router';
-import {apiImgUrl} from '@/apis/imgUrl';
-import {blobToBase64} from '@/utils/img'
+import {apiUploadImgUrl,apiGetImgUrl} from '@/apis/imgUrl';
+import {blobToBase64,cdnImgUrl} from '@/utils/img';
+import {apiArticleCreate} from '@/apis/article'
   export default defineComponent({
     name: 'Admin',
     components:{Edit,AdminPopup},
     setup(props,ctx:any) {
-        const editRef =ref();
         const title =ref('');
         const popshow =ref(false)
-        const params:any =ref({});
+        const editContent:any =ref('');
+        const onEdit=(content:any)=>{
+            editContent.value =content;
+        }
         const go2Home=()=>{
             router.push({path:''})
         }
         const submit =()=>{
             popshow.value=!popshow.value;
         }
-        const afterRead =(file:File)=>{
-            console.log(file)
-        }
         const  onSubmit= async (params:any)=>{
-            console.log(params.file,params.file[0].file);
-            const urlBase64 :any=await blobToBase64(params.file[0].file);
-            const ret =await apiImgUrl({
-                name:params.file[0].file.name,
-                message:'图片',
+            const {classify,file} =params;
+            const [File] =file;
+            const urlBase64 :any=await blobToBase64(File.file);
+            const ret:any = await apiUploadImgUrl({
+                name:File.file.name,
+                message:`${File.file.name} upload`,
                 content:urlBase64.substring(urlBase64.indexOf(',')+1)
-            });
-            console.log(ret)
+            });            
+            if(ret.error) return;
+            const {content} =ret.data;
+         
+            const result:any= await apiArticleCreate({
+                title:title.value,
+                content:editContent.value,
+                cover_url:cdnImgUrl(content.download_url),
+                cover_name:File.file.name,
+                categoty_id:classify.value,
+                categoty_name:classify.label
+            })
+            console.log(result,'---result');
+           
         }
         const onCancel=()=>{
             console.log(123)
@@ -54,12 +67,12 @@ import {blobToBase64} from '@/utils/img'
         return {
            go2Home,
            title,
-           editRef,
            submit,
            popshow,
            onSubmit,
-           onCancel
-
+           onCancel,
+           editContent,
+           onEdit
         }
     }
   })

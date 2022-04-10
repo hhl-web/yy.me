@@ -20,9 +20,20 @@ export function createService(suffixURL = '', flag = false): HttpMethodHandler {
       
         return config;
     });
-    // service.interceptors.response.use((config)=>{
-
-    // });
+    service.interceptors.response.use((config)=>{
+        console.log(config)
+        let data:any={};
+        let code:any=0;
+        if(config.status>=200 && config.status<400){
+            data=config.data
+            code = 1
+        }else{
+            code = 0
+        }
+        return {data,error:!code,code};
+    },(err)=>{
+        console.log(err)
+    });
     return {
         get<T = any>(url: string, data?: any, options?: AjaxRequestConfig): Promise<AjaxResult<T>> {
             return service.get(url, { params: data, ...options });
